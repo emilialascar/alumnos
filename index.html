@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>App Colegio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Plataforma Colegio</h1>
+    <button id="logoutBtn" class="oculto">Cerrar sesión</button>
+  </header>
+
+  <!-- Sección de login -->
+  <section id="login-section">
+    <h2>Ingreso</h2>
+    <form id="loginForm">
+      <label>
+        Correo:
+        <input type="email" id="email" required />
+      </label>
+
+      <label>
+        Contraseña:
+        <input type="password" id="password" required />
+      </label>
+
+      <label>
+        Rol:
+        <select id="rol">
+          <option value="admin">Administrador</option>
+          <option value="docente">Docente</option>
+          <option value="alumno">Alumno</option>
+          <option value="apoderado">Apoderado</option>
+        </select>
+      </label>
+
+      <button type="submit">Ingresar</button>
+      <p id="loginError" class="error"></p>
+    </form>
+  </section>
+
+  <!-- Sección dashboard genérica -->
+  <section id="dashboard-section" class="oculto">
+    <h2 id="dashboard-title"></h2>
+    <p id="bienvenida"></p>
+
+    <!-- Vista administrador -->
+    <div id="admin-view" class="vista-rol oculto">
+      <h3>Listado de todos los alumnos</h3>
+      <div id="admin-alumnos-container"></div>
+    </div>
+
+    <!-- Vista docente -->
+    <div id="docente-view" class="vista-rol oculto">
+      <h3>Mis cursos y alumnos</h3>
+      <div id="docente-alumnos-container"></div>
+    </div>
+
+    <!-- Vista alumno -->
+    <div id="alumno-view" class="vista-rol oculto">
+      <h3>Mi información</h3>
+      <div id="alumno-info-container"></div>
+    </div>
+
+    <!-- Vista apoderado -->
+    <div id="apoderado-view" class="vista-rol oculto">
+      <h3>Información de mi hijo(a)</h3>
+      <div id="apoderado-alumno-container"></div>
+    </div>
+  </section>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
